@@ -1,38 +1,47 @@
-.Login-reg-box {
+.logo {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.loginReg {
   position: absolute;
-  width: 400px;
-  height: 310px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  padding: 20px;
+  width: 400px;
+  height: 310px;
+  background-color: #fff;
 }
 
-.title-box {
+.title {
   height: 60px;
-  background: url('/assets/images/login_title.png') no-repeat center;
+  background: url('../images/login_title.png') no-repeat center;
 }
 
-/* 默认去登录盒子隐藏 */
-.reg-box {
+#loginBox {
+  padding: 0 30px;
+}
+
+#regBox {
+  padding: 0 30px;
   display: none;
 }
 
-.links {
-  display: flex;
-  justify-content: flex-end;
+.aLinks {
+   display: flex;
+   justify-content: flex-end;
 }
 
-/* 小图标 */
 .layui-form-item {
   position: relative;
 }
-.layui-form-item i {
+
+.loginReg i {
   position: absolute;
-  left: 10px;
   top: 10px;
+  left: 10px
 }
-.layui-input {
-  padding-left: 32px;
+
+.loginReg input {
+  padding-left: 35px
 }
