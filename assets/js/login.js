@@ -5,6 +5,7 @@ $(function () {
         $('#loginBox').hide();
         $('#regBox').show();
     });
+    //注册登录切换
     $('#regLink').click(function () {
         $('#regBox').hide();
         $('#loginBox').show();
@@ -35,16 +36,14 @@ $(function () {
         $.post('http://ajax.frontend.itheima.net/api/reguser', info, function (res) {
             // console.log(res);
             if (res.status === 0) {
-                layer.msg(res.message);
-                $('#regBox').hide();
-                $('#loginBox').show();
+                $('#regLink').click();
                 $('#regBox')[0].reset();
-            } else {
-                layer.msg(res.message)
             }
+            layer.msg(res.message);
         })
     });
 
+    //登录功能
 
 
 
