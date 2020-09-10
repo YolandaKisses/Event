@@ -50,7 +50,7 @@ $(function () {
         $.post('/api/login', formData, function (res) {
             console.log(res);
             if (res.status === 0) {
-                // window.location.href = './index.html';
+                window.location.href = './index.html';
                 res.token.length !== 0 && window.localStorage.setItem('token', res.token);
             }
             layer.msg(res.message);
