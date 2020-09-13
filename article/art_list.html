@@ -88,14 +88,29 @@
     <script type="text/html" id="tpl-initList">
         {{each data}}
         <tr>
-            <th>ID</th>
-            <th>文章标题</th>
-            <th>所属分类</th>
-            <th>发布时间</th>
-            <th>状态</th>
-            <th>操作</th>
+          <td>{{$value.Id}}</td>
+          <td>{{$value.title}}</td>
+          <td>{{$value.cate_name}}</td>
+          <td>{{$value.pub_date}}</td>
+          <td>{{$value.state}}</td>
+          <td>
+            <button
+              data-id="{{$value.Id}}"
+              type="button"
+              class="layui-btn layui-btn-xs edit"
+            >
+              编辑
+            </button>
+            <button
+              data-id="{{$value.Id}}"
+              type="button"
+              class="layui-btn layui-btn-danger layui-btn-xs delete"
+            >
+              删除
+            </button>
+          </td>
         </tr>
-        {{/each data}}
+        {{/each}}
     </script>
     <!-- 加载layui.all.js -->
     <script src="/assets/lib/layui/layui.all.js"></script>
