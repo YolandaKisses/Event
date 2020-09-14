@@ -27,23 +27,21 @@
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
             <!-- 内容区一  搜索区 -->
-            <form class="layui-form">
+            <form class="layui-form" id="form-search">
                 <div class="layui-form-item">
                     <div class="layui-inline">
                         <div class="layui-input-inline" style="width: 100px">
-                            <select name="city" lay-verify="">
-                                <option value="">所有分类</option>
-                                <option value="010">北京</option>
-                                <option value="021">上海</option>
-                                <option value="0571">杭州</option>
+                            <select name="cate_id" id="cateBox">
+
                             </select>
                         </div>
+
                         <div class="layui-input-inline" style="width: 100px">
-                            <select name="city" lay-verify="">
+                            <!-- 表单请求： name=“city” value=“010” -->
+                            <select name="state" id="stateBox">
                                 <option value="">所有状态</option>
-                                <option value="010">北京</option>
-                                <option value="021">上海</option>
-                                <option value="0571">杭州</option>
+                                <option value="已发布">已发布</option>
+                                <option value="草稿">草稿</option>
                             </select>
                         </div>
                     </div>
@@ -85,6 +83,7 @@
             <div id="page"></div>
         </div>
     </div>
+    <!-- 文章列表模板 -->
     <script type="text/html" id="tpl-initList">
         {{each data}}
         <tr>
@@ -112,8 +111,17 @@
         </tr>
         {{/each}}
     </script>
+    <!-- 获取分类模板 -->
+    <script type="text/html" id="tpl-initCate">
+        <option value="">所有分类</option>
+        {{each data}}
+            <option value="{{$value.Id}}">{{$value.name}}</option>
+        {{/each data}}
+    </script>
+
     <!-- 加载layui.all.js -->
     <script src="/assets/lib/layui/layui.all.js"></script>
+
 </body>
 
 </html>
