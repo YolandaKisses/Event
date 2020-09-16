@@ -101,7 +101,10 @@ $(function () {
         });
     });
 
-
+    $('tbody').on('click', '.edit', function (e) {
+        e.preventDefault();
+        window.location.href = '/article/art_edit.html?id=' + $(this).attr('data-id');;
+    })
 
 
 
